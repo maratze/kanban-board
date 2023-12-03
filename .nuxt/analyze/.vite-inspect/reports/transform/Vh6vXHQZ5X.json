@@ -1,0 +1,215 @@
+{
+  "resolvedId": "/Users/mramazanov/Documents/repos/nuxt-projects/kanban-board/components/sidebar/Menu.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div>\r\n    <ul class=\"grid gap-2\">\r\n      <li>\r\n        <NuxtLink to=\"/boards\" activeClass=\"text-slate-500 bg-slate-200\" class=\"flex justify-start items-center gap-2 py-3 px-4 text-slate-600 rounded-md transition-all hover:bg-slate-200\">\r\n          <Icon name=\"streamline:dashboard-3-solid\" class=\"text-sm\" />\r\n          <span class=\"text-sm font-medium\">Boards</span>\r\n        </NuxtLink>\r\n      </li>\r\n      <li>\r\n        <NuxtLink to=\"/\" activeClass=\"text-slate-500 bg-slate-200\" class=\"flex justify-start items-center gap-2 py-3 px-4 text-slate-600 rounded-md transition-all hover:bg-slate-200\">\r\n          <Icon name=\"streamline:home-4-solid\" class=\"text-sm\" />\r\n          <span class=\"text-sm font-medium\">Home page</span>\r\n        </NuxtLink>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</template>",
+      "start": 1701585988431,
+      "end": 1701585988458,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1701585988458,
+      "end": 1701585988458,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "const _sfc_main = {}\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"grid gap-2\" }\nconst _hoisted_2 = /*#__PURE__*/_createElementVNode(\"span\", { class: \"text-sm font-medium\" }, \"Boards\", -1)\nconst _hoisted_3 = /*#__PURE__*/_createElementVNode(\"span\", { class: \"text-sm font-medium\" }, \"Home page\", -1)\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_NuxtLink = _resolveComponent(\"NuxtLink\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"ul\", _hoisted_1, [\n      _createElementVNode(\"li\", null, [\n        _createVNode(_component_NuxtLink, {\n          to: \"/boards\",\n          activeClass: \"text-slate-500 bg-slate-200\",\n          class: \"flex justify-start items-center gap-2 py-3 px-4 text-slate-600 rounded-md transition-all hover:bg-slate-200\"\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_Icon, {\n              name: \"streamline:dashboard-3-solid\",\n              class: \"text-sm\"\n            }),\n            _hoisted_2\n          ]),\n          _: 1\n        })\n      ]),\n      _createElementVNode(\"li\", null, [\n        _createVNode(_component_NuxtLink, {\n          to: \"/\",\n          activeClass: \"text-slate-500 bg-slate-200\",\n          class: \"flex justify-start items-center gap-2 py-3 px-4 text-slate-600 rounded-md transition-all hover:bg-slate-200\"\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_Icon, {\n              name: \"streamline:home-4-solid\",\n              class: \"text-sm\"\n            }),\n            _hoisted_3\n          ]),\n          _: 1\n        })\n      ])\n    ])\n  ]))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"/Users/mramazanov/Documents/repos/nuxt-projects/kanban-board/node_modules/nuxt/dist/app/components/nuxt-link\";\nconst _sfc_main = {}\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"grid gap-2\" }\nconst _hoisted_2 = /*#__PURE__*/_createElementVNode(\"span\", { class: \"text-sm font-medium\" }, \"Boards\", -1)\nconst _hoisted_3 = /*#__PURE__*/_createElementVNode(\"span\", { class: \"text-sm font-medium\" }, \"Home page\", -1)\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_NuxtLink = __nuxt_component_0\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"ul\", _hoisted_1, [\n      _createElementVNode(\"li\", null, [\n        _createVNode(_component_NuxtLink, {\n          to: \"/boards\",\n          activeClass: \"text-slate-500 bg-slate-200\",\n          class: \"flex justify-start items-center gap-2 py-3 px-4 text-slate-600 rounded-md transition-all hover:bg-slate-200\"\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_Icon, {\n              name: \"streamline:dashboard-3-solid\",\n              class: \"text-sm\"\n            }),\n            _hoisted_2\n          ]),\n          _: 1\n        })\n      ]),\n      _createElementVNode(\"li\", null, [\n        _createVNode(_component_NuxtLink, {\n          to: \"/\",\n          activeClass: \"text-slate-500 bg-slate-200\",\n          class: \"flex justify-start items-center gap-2 py-3 px-4 text-slate-600 rounded-md transition-all hover:bg-slate-200\"\n        }, {\n          default: _withCtx(() => [\n            _createVNode(_component_Icon, {\n              name: \"streamline:home-4-solid\",\n              class: \"text-sm\"\n            }),\n            _hoisted_3\n          ]),\n          _: 1\n        })\n      ])\n    ])\n  ]))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1701585988459,
+      "end": 1701585988459,
+      "order": "normal"
+    }
+  ]
+}

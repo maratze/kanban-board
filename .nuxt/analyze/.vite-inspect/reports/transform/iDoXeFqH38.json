@@ -1,0 +1,214 @@
+{
+  "resolvedId": "/Users/mramazanov/Documents/repos/nuxt-projects/kanban-board/pages/boards/[id].vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div>\r\n    <!-- Header height is 3.5rem -->\r\n    <div class=\"grid items-center h-[4rem] px-4 bg-white border-b border-slate-300\">\r\n      <div class=\"flex justify-between\">\r\n        <div class=\"flex items-center gap-4\">\r\n          <span>Project name</span>\r\n          <Icon name=\"streamline:interface-favorite-star-reward-rating-rate-social-star-media-favorite-like-stars\"\r\n            class=\"transition-all cursor-pointer hover:scale-110\" />\r\n          <!-- <Icon name=\"streamline:star-1-solid\" class=\"transition-all cursor-pointer hover:scale-110\" /> -->\r\n        </div>\r\n        <div class=\"flex gap-4\">\r\n          <button\r\n            class=\"flex justify-center items-center gap-2 py-2 px-4 text-slate-500 rounded-md bg-slate-200 transition-all duration-300 hover:bg-slate-300\">\r\n            <Icon name=\"streamline:interface-user-add-actions-add-close-geometric-human-person-plus-single-up-user\" />\r\n            <span>Share</span>\r\n          </button>\r\n          <div\r\n            class=\"flex justify-center items-center w-10 h-10 text-red-400 rounded-full bg-red-200 transition-all cursor-pointer hover:ring-4 hover:ring-slate-300\">\r\n            M</div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"p-4 h-[calc(100vh-4rem)] bg-slate-300 overflow-scroll\">\r\n      <div class=\"flex gap-4 w-max items-start\">\r\n        <!-- Column -->\r\n        <div class=\"w-[320px] min-w-[320px] pt-4 pb-2 px-2 bg-slate-100 rounded-lg ring-1 ring-slate-300\">\r\n          <!-- Title -->\r\n          <div class=\"flex items-center max-w-max h-7 mb-4 px-3 text-slate-500 text-md font-medium rounded-full\">To do\r\n          </div>\r\n          <!-- Card -->\r\n          <div\r\n            class=\"mt-2 p-4 rounded-lg bg-white shadow-sm cursor-pointer transition-all duration-200 hover:ring-2 hover:ring-blue-400\">\r\n            <h3 class=\"block text-md font-medium\">Simple card title</h3>\r\n          </div>\r\n          <!-- Card -->\r\n          <div\r\n            class=\"mt-2 p-4 rounded-lg bg-white shadow-sm cursor-pointer transition-all duration-200 hover:ring-2 hover:ring-blue-400\">\r\n            <div class=\"flex gap-2 mb-4\">\r\n              <div class=\"flex justify-center items-center w-6 h-6 text-orange-400 text-xs rounded-full bg-orange-200\">M\r\n              </div>\r\n              <div class=\"flex justify-center items-center w-6 h-6 text-red-400 text-xs rounded-full bg-red-200\">R\r\n              </div>\r\n            </div>\r\n            <h3 class=\"block text-md font-medium\">Card with authors</h3>\r\n          </div>\r\n          <!-- Card -->\r\n          <div\r\n            class=\"mt-2 p-4 rounded-lg bg-white shadow-sm cursor-pointer transition-all duration-200 hover:ring-2 hover:ring-blue-400\">\r\n            <h3 class=\"block text-md font-medium\">Card title with authors and labels</h3>\r\n            <p class=\"block mt-2 text-sm text-slate-500\">A short description of a card.</p>\r\n            <div class=\"flex items-center gap-4 mt-4 text-sm text-slate-500\">\r\n              <Icon name=\"streamline:visible\" />\r\n              <Icon\r\n                name=\"streamline:interface-text-formatting-paragraph-article-alignment-formatting-normal-paragraph-text\" />\r\n              <span class=\"flex items-center gap-1\">\r\n                <Icon\r\n                  name=\"streamline:interface-validation-check-square-1-check-form-validation-checkmark-success-add-addition-box-square\" />\r\n                <span class=\"text-xs\">0/2</span>\r\n              </span>\r\n              <span class=\"flex items-center gap-1\">\r\n                <Icon name=\"streamline:chat-bubble-oval\" />\r\n                <span class=\"text-xs\">2</span>\r\n              </span>\r\n            </div>\r\n            <div class=\"flex flex-wrap gap-2 mt-4\">\r\n              <div class=\"text-xs px-2 py-1 rounded-md bg-green-200\">Label</div>\r\n              <div class=\"text-xs px-2 py-1 rounded-md bg-blue-200\">Label</div>\r\n              <div class=\"text-xs px-2 py-1 rounded-md bg-purple-200\">Label</div>\r\n              <div class=\"text-xs px-2 py-1 rounded-md bg-red-200\">Label</div>\r\n              <div class=\"text-xs px-2 py-1 rounded-md bg-orange-200\">Label</div>\r\n              <div class=\"text-xs px-2 py-1 rounded-md bg-yellow-200\">Label</div>\r\n            </div>\r\n          </div>\r\n          <!-- Button add a card -->\r\n          <div class=\"mt-2\">\r\n            <button\r\n              class=\"flex justify-start items-center gap-2 w-full py-2 px-4 text-slate-500 text-sm rounded-lg transition-all hover:bg-slate-200\">\r\n              <Icon name=\"streamline:add-1-solid\" />\r\n              <span class=\"font-medium\">Add a card</span>\r\n            </button>\r\n          </div>\r\n        </div>\r\n        <!-- Column -->\r\n        <div class=\"w-[320px] min-w-[320px] pt-4 pb-2 px-2 bg-slate-100 rounded-lg ring-1 ring-slate-300\">\r\n          <!-- Title -->\r\n          <div class=\"flex items-center max-w-max h-7 mb-4 px-3 text-slate-500 text-md font-medium rounded-full\">In\r\n            progress\r\n          </div>\r\n          <!-- Button add a card -->\r\n          <div class=\"mt-2\">\r\n            <button\r\n              class=\"flex justify-start items-center gap-2 w-full py-2 px-4 text-slate-500 text-sm rounded-lg transition-all hover:bg-slate-200\">\r\n              <Icon name=\"streamline:add-1-solid\" />\r\n              <span class=\"font-medium\">Add a card</span>\r\n            </button>\r\n          </div>\r\n        </div>\r\n        <!-- Column -->\r\n        <div class=\"w-[320px] min-w-[320px] p-2 px-2 bg-slate-200 rounded-lg ring-1 ring-slate-300\">\r\n          <!-- Button add a card -->\r\n          <div>\r\n            <button\r\n              class=\"flex justify-start items-center gap-2 w-full py-2 px-4 text-slate-500 text-sm rounded-lg transition-all hover:bg-slate-300\">\r\n              <Icon name=\"streamline:add-1-solid\" />\r\n              <span class=\"font-medium\">Add a new column</span>\r\n            </button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <!-- <slot /> -->\r\n    </div>\r\n  </div>\r\n</template>",
+      "start": 1701585988185,
+      "end": 1701585988293,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1701585988293,
+      "end": 1701585988293,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1701585988293,
+      "end": 1701585988294,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1701585988294,
+      "end": 1701585988294,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1701585988294,
+      "end": 1701585988294,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1701585988294,
+      "end": 1701585988294,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1701585988294,
+      "end": 1701585988294,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1701585988294,
+      "end": 1701585988294,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "const _sfc_main = {}\nimport { createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, createStaticVNode as _createStaticVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"grid items-center h-[4rem] px-4 bg-white border-b border-slate-300\" }\nconst _hoisted_2 = { class: \"flex justify-between\" }\nconst _hoisted_3 = { class: \"flex items-center gap-4\" }\nconst _hoisted_4 = /*#__PURE__*/_createElementVNode(\"span\", null, \"Project name\", -1)\nconst _hoisted_5 = { class: \"flex gap-4\" }\nconst _hoisted_6 = { class: \"flex justify-center items-center gap-2 py-2 px-4 text-slate-500 rounded-md bg-slate-200 transition-all duration-300 hover:bg-slate-300\" }\nconst _hoisted_7 = /*#__PURE__*/_createElementVNode(\"span\", null, \"Share\", -1)\nconst _hoisted_8 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"flex justify-center items-center w-10 h-10 text-red-400 rounded-full bg-red-200 transition-all cursor-pointer hover:ring-4 hover:ring-slate-300\" }, \" M\", -1)\nconst _hoisted_9 = { class: \"p-4 h-[calc(100vh-4rem)] bg-slate-300 overflow-scroll\" }\nconst _hoisted_10 = { class: \"flex gap-4 w-max items-start\" }\nconst _hoisted_11 = { class: \"w-[320px] min-w-[320px] pt-4 pb-2 px-2 bg-slate-100 rounded-lg ring-1 ring-slate-300\" }\nconst _hoisted_12 = /*#__PURE__*/_createStaticVNode(\"<div class=\\\"flex items-center max-w-max h-7 mb-4 px-3 text-slate-500 text-md font-medium rounded-full\\\">To do </div><div class=\\\"mt-2 p-4 rounded-lg bg-white shadow-sm cursor-pointer transition-all duration-200 hover:ring-2 hover:ring-blue-400\\\"><h3 class=\\\"block text-md font-medium\\\">Simple card title</h3></div><div class=\\\"mt-2 p-4 rounded-lg bg-white shadow-sm cursor-pointer transition-all duration-200 hover:ring-2 hover:ring-blue-400\\\"><div class=\\\"flex gap-2 mb-4\\\"><div class=\\\"flex justify-center items-center w-6 h-6 text-orange-400 text-xs rounded-full bg-orange-200\\\">M </div><div class=\\\"flex justify-center items-center w-6 h-6 text-red-400 text-xs rounded-full bg-red-200\\\">R </div></div><h3 class=\\\"block text-md font-medium\\\">Card with authors</h3></div>\", 3)\nconst _hoisted_15 = { class: \"mt-2 p-4 rounded-lg bg-white shadow-sm cursor-pointer transition-all duration-200 hover:ring-2 hover:ring-blue-400\" }\nconst _hoisted_16 = /*#__PURE__*/_createElementVNode(\"h3\", { class: \"block text-md font-medium\" }, \"Card title with authors and labels\", -1)\nconst _hoisted_17 = /*#__PURE__*/_createElementVNode(\"p\", { class: \"block mt-2 text-sm text-slate-500\" }, \"A short description of a card.\", -1)\nconst _hoisted_18 = { class: \"flex items-center gap-4 mt-4 text-sm text-slate-500\" }\nconst _hoisted_19 = { class: \"flex items-center gap-1\" }\nconst _hoisted_20 = /*#__PURE__*/_createElementVNode(\"span\", { class: \"text-xs\" }, \"0/2\", -1)\nconst _hoisted_21 = { class: \"flex items-center gap-1\" }\nconst _hoisted_22 = /*#__PURE__*/_createElementVNode(\"span\", { class: \"text-xs\" }, \"2\", -1)\nconst _hoisted_23 = /*#__PURE__*/_createStaticVNode(\"<div class=\\\"flex flex-wrap gap-2 mt-4\\\"><div class=\\\"text-xs px-2 py-1 rounded-md bg-green-200\\\">Label</div><div class=\\\"text-xs px-2 py-1 rounded-md bg-blue-200\\\">Label</div><div class=\\\"text-xs px-2 py-1 rounded-md bg-purple-200\\\">Label</div><div class=\\\"text-xs px-2 py-1 rounded-md bg-red-200\\\">Label</div><div class=\\\"text-xs px-2 py-1 rounded-md bg-orange-200\\\">Label</div><div class=\\\"text-xs px-2 py-1 rounded-md bg-yellow-200\\\">Label</div></div>\", 1)\nconst _hoisted_24 = { class: \"mt-2\" }\nconst _hoisted_25 = { class: \"flex justify-start items-center gap-2 w-full py-2 px-4 text-slate-500 text-sm rounded-lg transition-all hover:bg-slate-200\" }\nconst _hoisted_26 = /*#__PURE__*/_createElementVNode(\"span\", { class: \"font-medium\" }, \"Add a card\", -1)\nconst _hoisted_27 = { class: \"w-[320px] min-w-[320px] pt-4 pb-2 px-2 bg-slate-100 rounded-lg ring-1 ring-slate-300\" }\nconst _hoisted_28 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"flex items-center max-w-max h-7 mb-4 px-3 text-slate-500 text-md font-medium rounded-full\" }, \"In progress \", -1)\nconst _hoisted_29 = { class: \"mt-2\" }\nconst _hoisted_30 = { class: \"flex justify-start items-center gap-2 w-full py-2 px-4 text-slate-500 text-sm rounded-lg transition-all hover:bg-slate-200\" }\nconst _hoisted_31 = /*#__PURE__*/_createElementVNode(\"span\", { class: \"font-medium\" }, \"Add a card\", -1)\nconst _hoisted_32 = { class: \"w-[320px] min-w-[320px] p-2 px-2 bg-slate-200 rounded-lg ring-1 ring-slate-300\" }\nconst _hoisted_33 = { class: \"flex justify-start items-center gap-2 w-full py-2 px-4 text-slate-500 text-sm rounded-lg transition-all hover:bg-slate-300\" }\nconst _hoisted_34 = /*#__PURE__*/_createElementVNode(\"span\", { class: \"font-medium\" }, \"Add a new column\", -1)\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createElementVNode(\"div\", _hoisted_1, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        _createElementVNode(\"div\", _hoisted_3, [\n          _hoisted_4,\n          _createVNode(_component_Icon, {\n            name: \"streamline:interface-favorite-star-reward-rating-rate-social-star-media-favorite-like-stars\",\n            class: \"transition-all cursor-pointer hover:scale-110\"\n          })\n        ]),\n        _createElementVNode(\"div\", _hoisted_5, [\n          _createElementVNode(\"button\", _hoisted_6, [\n            _createVNode(_component_Icon, { name: \"streamline:interface-user-add-actions-add-close-geometric-human-person-plus-single-up-user\" }),\n            _hoisted_7\n          ]),\n          _hoisted_8\n        ])\n      ])\n    ]),\n    _createElementVNode(\"div\", _hoisted_9, [\n      _createElementVNode(\"div\", _hoisted_10, [\n        _createElementVNode(\"div\", _hoisted_11, [\n          _hoisted_12,\n          _createElementVNode(\"div\", _hoisted_15, [\n            _hoisted_16,\n            _hoisted_17,\n            _createElementVNode(\"div\", _hoisted_18, [\n              _createVNode(_component_Icon, { name: \"streamline:visible\" }),\n              _createVNode(_component_Icon, { name: \"streamline:interface-text-formatting-paragraph-article-alignment-formatting-normal-paragraph-text\" }),\n              _createElementVNode(\"span\", _hoisted_19, [\n                _createVNode(_component_Icon, { name: \"streamline:interface-validation-check-square-1-check-form-validation-checkmark-success-add-addition-box-square\" }),\n                _hoisted_20\n              ]),\n              _createElementVNode(\"span\", _hoisted_21, [\n                _createVNode(_component_Icon, { name: \"streamline:chat-bubble-oval\" }),\n                _hoisted_22\n              ])\n            ]),\n            _hoisted_23\n          ]),\n          _createElementVNode(\"div\", _hoisted_24, [\n            _createElementVNode(\"button\", _hoisted_25, [\n              _createVNode(_component_Icon, { name: \"streamline:add-1-solid\" }),\n              _hoisted_26\n            ])\n          ])\n        ]),\n        _createElementVNode(\"div\", _hoisted_27, [\n          _hoisted_28,\n          _createElementVNode(\"div\", _hoisted_29, [\n            _createElementVNode(\"button\", _hoisted_30, [\n              _createVNode(_component_Icon, { name: \"streamline:add-1-solid\" }),\n              _hoisted_31\n            ])\n          ])\n        ]),\n        _createElementVNode(\"div\", _hoisted_32, [\n          _createElementVNode(\"div\", null, [\n            _createElementVNode(\"button\", _hoisted_33, [\n              _createVNode(_component_Icon, { name: \"streamline:add-1-solid\" }),\n              _hoisted_34\n            ])\n          ])\n        ])\n      ])\n    ])\n  ]))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
+      "start": 1701585988294,
+      "end": 1701585988295,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1701585988295,
+      "end": 1701585988295,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1701585988295,
+      "end": 1701585988295,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1701585988295,
+      "end": 1701585988295,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1701585988295,
+      "end": 1701585988295,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1701585988295,
+      "end": 1701585988295,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1701585988295,
+      "end": 1701585988295,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1701585988295,
+      "end": 1701585988295,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1701585988295,
+      "end": 1701585988295,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1701585988295,
+      "end": 1701585988295,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1701585988295,
+      "end": 1701585988295,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1701585988295,
+      "end": 1701585988295,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1701585988295,
+      "end": 1701585988295,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1701585988295,
+      "end": 1701585988295,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1701585988295,
+      "end": 1701585988295,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1701585988295,
+      "end": 1701585988295,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1701585988295,
+      "end": 1701585988295,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1701585988295,
+      "end": 1701585988295,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1701585988295,
+      "end": 1701585988295,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1701585988295,
+      "end": 1701585988295,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1701585988295,
+      "end": 1701585988297,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1701585988297,
+      "end": 1701585988297,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1701585988297,
+      "end": 1701585988297,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1701585988297,
+      "end": 1701585988297,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1701585988297,
+      "end": 1701585988297,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1701585988297,
+      "end": 1701585988297,
+      "order": "normal"
+    }
+  ]
+}
