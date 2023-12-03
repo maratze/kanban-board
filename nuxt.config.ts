@@ -1,7 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['nuxt-icon'],
+  modules: [
+    'nuxt-icon',
+    '@vee-validate/nuxt'
+  ],
   imports: {
     dirs: [
       'types/*.ts',
@@ -16,5 +19,10 @@ export default defineNuxtConfig({
   },
   css: [
     '@/assets/scss/main.scss'
-  ]
+  ],
+  app: {
+    head: {
+      title: 'Worker'
+    }
+  }
 })

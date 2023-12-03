@@ -18,8 +18,9 @@
 
 <script lang="ts" setup>
 useHead({
-  title: 'Login'
+  title: 'Sign in'
 })
+
 definePageMeta({
   layout: 'login' as MaybeRef
 })

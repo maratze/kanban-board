@@ -9,6 +9,6 @@
 
 <script lang="ts" setup>
 const props = defineProps({
-  text: String | null
+  text: String
 })
 </script>
