@@ -1,7 +1,7 @@
 <template>
   <div>
     <LoginHeader title="Sign up"></LoginHeader>
-    <LoginHeaderDescription>Today is a new day. It's your day. You shape it. <br /> Sign up to create your first project.</LoginHeaderDescription>
+    <LoginHeaderDescription>Sign up to create your first project</LoginHeaderDescription>
     <div class="mt-8">
       <LoginEmail />
       <LoginButton text="Sign up" class="mt-4" />
