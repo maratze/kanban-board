@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed z-10 w-[260px] h-full p-4 bg-white border-r border-slate-300">
+  <div class="fixed z-10 h-full w-[260px] p-4 pt-[72px] bg-white border-r border-slate-300">
     <SidebarMenu />
     <Separator />
     <SidebarWorkspaces />
