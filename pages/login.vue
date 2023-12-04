@@ -4,8 +4,8 @@
   </LoginHeader>
   <LoginHeaderDescription>Sign in to start managing your projects</LoginHeaderDescription>
   <div class="mt-8">
-    <LoginEmail />
-    <LoginPassword class="mt-4" />
+    <LoginEmail v-model="data.email" />
+    <LoginPassword v-model="data.password" class="mt-4" />
     <div class="flex justify-end w-full mt-6">
       <NuxtLink to="#" class="text-sm text-blue-600 border-blue-600 hover:underline">Forgot password?</NuxtLink>
     </div>
@@ -17,11 +17,18 @@
 </template>
 
 <script lang="ts" setup>
+import type { LoginForm } from '@/types/auth';
+
 useHead({
   title: 'Sign in'
 })
 
 definePageMeta({
   layout: 'login' as MaybeRef
+})
+
+const data = reactive<LoginForm>({
+  email: '',
+  password: ''
 })
 </script>
