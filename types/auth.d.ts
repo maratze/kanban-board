@@ -1,12 +1,15 @@
-interface LoginForm {
-	email: string;
-	password: string;
+export interface LoginForm {
+	email: string
+	password: string
 }
 
-interface RegisterForm {
-	email: string;
-	password: string;
-	repeatPassword: string;
+export interface RegisterForm {
+	email: string
+	password: string
+	step: RegisterStep
 }
 
-export { LoginForm, RegisterForm };
+export enum RegisterStep {
+	InputEmail = 1,
+	InputPassword = 2
+}
