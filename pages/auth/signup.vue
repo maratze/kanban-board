@@ -40,9 +40,10 @@
 </template>
 
 <script lang="ts" setup>
-import useVuelidate from '@vuelidate/core';
-import { required, email, minLength, helpers } from '@vuelidate/validators';
-import { type RegisterForm, RegisterStep } from '~/types/auth.d';
+import useVuelidate from '@vuelidate/core'
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
+import { required, email, minLength, helpers } from '@vuelidate/validators'
+import { type RegisterForm, RegisterStep } from '~/types/auth.d'
 
 useHead({
   title: 'Sign up'
@@ -97,6 +98,17 @@ const register = (): void => {
   }
 
   // Register a user
-  console.log('Sign up a user');
+  const auth = getAuth()
+
+  createUserWithEmailAndPassword(auth, data.email, data.password)
+    .then((userCredential) => {
+      const user = userCredential.user
+      debugger
+    })
+    .catch((error) => {
+      const errorCode = error.code
+      const errorMessage = error.message
+      debugger
+    })
 }
 </script>
