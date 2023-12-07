@@ -4,18 +4,19 @@ export default defineNuxtConfig({
 	devtools: { enabled: true },
 	modules: [
 		'nuxt-icon',
-		'nuxt-vuefire'
+		'nuxt-vuefire',
+		'@pinia/nuxt'
 	],
 	imports: {
 		dirs: [
 			'types/*.ts',
 			'types/**/*.ts'
-		],
+		]
 	},
 	app: {
 		head: {
 			title: 'Worker'
-		},
+		}
 	},
 	css: [
 		'@/assets/scss/main.scss'
@@ -23,8 +24,11 @@ export default defineNuxtConfig({
 	postcss: {
 		plugins: {
 			tailwindcss: {},
-			autoprefixer: {},
-		},
+			autoprefixer: {}
+		}
+	},
+	pinia: {
+		storesDirs: ['./stores/**'],
 	},
 	vuefire: {
 		auth: {
@@ -38,6 +42,11 @@ export default defineNuxtConfig({
 			messagingSenderId: "865760414147",
 			appId: "1:865760414147:web:8d710d411da4390cd11576",
 			measurementId: "G-W94TE1GQX7"
-		},
+		}
+	},
+	routeRules: {
+		'/auth': { redirect: '/auth/login' },
+		'/auth/signup': { redirect: '/auth/signup/step/email' },
+		'/auth/signup/step': { redirect: '/auth/signup/step/email' },
 	}
 })

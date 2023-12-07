@@ -6,10 +6,5 @@ export interface LoginForm {
 export interface RegisterForm {
 	email: string
 	password: string
-	step: RegisterStep
-}
-
-export enum RegisterStep {
-	InputEmail = 1,
-	InputPassword = 2
+	repeatPassword: string
 }

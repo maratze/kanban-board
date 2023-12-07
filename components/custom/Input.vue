@@ -31,7 +31,7 @@
 
 <script lang="ts" setup>
 
-const props = defineProps({
+defineProps({
   modelValue: String,
   type: String,
   id: String,
