@@ -23,8 +23,8 @@
       class="mt-4" />
     <LoginButton
       text="Sign up"
-      :loading="data.isSignupProcessing"
-      :disabled="v$.password.$invalid || v$.repeatPassword.$invalid || data.isSignupProcessing"
+      :loading="store.isProcessing"
+      :disabled="v$.password.$invalid || v$.repeatPassword.$invalid || store.isProcessing"
       @click.prevent="register"
       class="mt-4" />
   </div>
@@ -32,7 +32,6 @@
 
 <script lang="ts" setup>
 import useVuelidate from '@vuelidate/core'
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
 import { required, minLength, sameAs, helpers } from '@vuelidate/validators'
 
 definePageMeta({
@@ -41,9 +40,6 @@ definePageMeta({
 })
 
 const store = useSignupStore()
-const data = reactive({
-  isSignupProcessing: false
-})
 
 const rules = computed(() => {
   return {
@@ -65,25 +61,6 @@ const register = (): void => {
     return
   }
 
-  try {
-    data.isSignupProcessing = true
-
-    const auth = getAuth()
-    createUserWithEmailAndPassword(auth, store.email, store.password)
-      .then((userCredential) => {
-        const user = userCredential.user
-        debugger
-      })
-      .catch((error) => {
-        if (error.code === 'auth/email-already-in-use') {
-          useNuxtApp().$toast.error('The email address is already in use by another account.');
-        } else {
-          useNuxtApp().$toast.error(error.message);
-        }
-      })
-  }
-  finally {
-    data.isSignupProcessing = false
-  }
+  store.signup()
 }
 </script>

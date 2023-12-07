@@ -8,7 +8,7 @@
       }"
       class="h-[52px] flex items-center justify-center w-full text-white rounded-lg  transition-all duration-200 ">
       <template v-if="loading">
-        <BeatLoader size="12px" color="white" class="flex items-center justify-center" />
+        <BeatLoader size="10px" color="white" class="flex items-center justify-center" />
       </template>
       <template v-else>
         {{ props.text ?? 'Sign in' }}

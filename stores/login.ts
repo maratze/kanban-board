@@ -1,19 +1,18 @@
 import { defineStore } from 'pinia'
-import type { RegisterForm } from '~/types/auth'
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
+import type { LoginForm } from '~/types/auth'
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 
-export const useSignupStore = defineStore('signup', {
-  state: (): RegisterForm => ({
+export const useLoginStore = defineStore('login', {
+  state: (): LoginForm => ({
     email: 'maratoff20@gmail.com',
-    password: '123123',
-    repeatPassword: '123123',
+    password: '123123_',
     isProcessing: false
   }),
   actions: {
-    signup(): void {
+    login(): void {
       this.isProcessing = true
 
-      createUserWithEmailAndPassword(getAuth(), this.email, this.password)
+      signInWithEmailAndPassword(getAuth(), this.email, this.password)
         .then((userCredential) => {
           const user = userCredential.user
           // uid
@@ -26,8 +25,8 @@ export const useSignupStore = defineStore('signup', {
         })
         .catch((error) => {
           switch (error.code) {
-            case 'auth/email-already-in-use':
-              useNuxtApp().$toast.error('The email address is already in use by another account.')
+            case 'auth/invalid-credential':
+              useNuxtApp().$toast.error('Entered email or password is incorrect.')
               break
             default:
               useNuxtApp().$toast.error(error.message)

@@ -10,14 +10,14 @@
         id="email"
         label="Email"
         placeholder="example@mail.com"
-        v-model="data.email"
+        v-model="store.email"
         :v="v$.email" />
       <CustomInput
         type="password"
         id="password"
         label="Password"
         placeholder="At least 6 characters"
-        v-model="data.password"
+        v-model="store.password"
         class="mt-4"
         :v="v$.password" />
       <div class="flex justify-end w-full mt-6">
@@ -26,7 +26,8 @@
       </div>
       <LoginButton
         class="mt-6"
-        :disabled="isDisabledBtnLogin"
+        :disabled="v$.email.$invalid || v$.password.$invalid || store.isProcessing"
+        :loading="store.isProcessing"
         @click.prevent="login" />
     </div>
     <Separator text="Or sign in with" class="my-12" />
@@ -37,7 +38,6 @@
 
 <script lang="ts" setup>
 import useVuelidate from '@vuelidate/core';
-import type { LoginForm } from '@/types/auth';
 import { required, email, minLength, helpers } from '@vuelidate/validators';
 
 useHead({
@@ -48,10 +48,7 @@ definePageMeta({
   layout: 'home'
 })
 
-const data = reactive<LoginForm>({
-  email: '',
-  password: ''
-})
+const store = useLoginStore()
 
 const rules = computed(() => {
   return {
@@ -66,14 +63,13 @@ const rules = computed(() => {
   }
 })
 
-const v$ = useVuelidate(rules, data)
-
-const isDisabledBtnLogin = computed(() => {
-  return v$.value.email.$invalid || v$.value.password.$invalid
-})
+const v$ = useVuelidate(rules, store)
 
 const login = (): void => {
-  // Login a user
-  console.log('Login a user');
+  if (v$.value.email.$invalid || v$.value.password.$invalid) {
+    return
+  }
+
+  store.login()
 }
 </script>
