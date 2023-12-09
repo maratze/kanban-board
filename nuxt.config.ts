@@ -48,5 +48,7 @@ export default defineNuxtConfig({
 		'/auth': { redirect: '/auth/login' },
 		'/auth/signup': { redirect: '/auth/signup/step/email' },
 		'/auth/signup/step': { redirect: '/auth/signup/step/email' },
+		'/login': { redirect: '/auth/login' },
+		'/signup': { redirect: '/auth/signup/step/email' },
 	}
 })

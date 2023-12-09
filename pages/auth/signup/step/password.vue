@@ -36,7 +36,7 @@ import { required, minLength, sameAs, helpers } from '@vuelidate/validators'
 
 definePageMeta({
   layout: 'signup',
-  middleware: ['auth']
+  middleware: ['signup']
 })
 
 const store = useSignupStore()
