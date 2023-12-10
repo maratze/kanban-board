@@ -1,7 +1,7 @@
-export default defineNuxtRouteMiddleware((to, from) => {
-    const signupStore = useSignupStore()
+import { AUTH_SIGNUP_PATH } from '~/constants'
 
-    if (!signupStore.email) {
-        return navigateTo('/auth/signup/step/email')
+export default defineNuxtRouteMiddleware(() => {
+    if (!useSignupStore().email) {
+        return navigateTo(AUTH_SIGNUP_PATH + '/step/email')
     }
 })

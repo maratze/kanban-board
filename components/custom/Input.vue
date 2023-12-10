@@ -9,6 +9,7 @@
         :value="modelValue"
         :placeholder="placeholder"
         :disabled="disabled"
+        @keypress="submitByEnter"
         @input="inputValue"
         @change="v?.$touch"
         class="h-[48px] block mt-2 px-4 text-slate-800 border bg-slate-100 rounded-lg outline-none transition-all duration-200 placeholder-slate-400 placeholder:font-light"
@@ -42,9 +43,15 @@ defineProps({
   v: Object
 })
 
-const emit = defineEmits(['update:modelValue', 'change'])
+const emit = defineEmits(['update:modelValue', 'submit'])
 
 const inputValue = (event: Event) => {
   emit('update:modelValue', (event.target as HTMLInputElement).value)
+}
+
+const submitByEnter = (event: KeyboardEvent) => {
+  if (event.code === 'Enter') {
+    emit('submit')
+  }
 }
 </script>

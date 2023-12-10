@@ -6,9 +6,18 @@
           <HeaderLogo />
         </div>
         <div class="flex gap-4">
-          <HeaderAccount />
+          <HeaderAccount @click.prevent="signOut" />
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script lang="ts" setup>
+import { getAuth } from 'firebase/auth';
+
+const signOut = () => {
+  getAuth().signOut()
+  navigateTo('/', { external: true })
+}
+</script>

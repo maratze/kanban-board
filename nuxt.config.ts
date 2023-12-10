@@ -1,3 +1,5 @@
+import * as constants from './constants';
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 	ssr: false,
@@ -45,10 +47,11 @@ export default defineNuxtConfig({
 		}
 	},
 	routeRules: {
-		'/auth': { redirect: '/auth/login' },
-		'/auth/signup': { redirect: '/auth/signup/step/email' },
-		'/auth/signup/step': { redirect: '/auth/signup/step/email' },
-		'/login': { redirect: '/auth/login' },
-		'/signup': { redirect: '/auth/signup/step/email' },
+		'/': { redirect: constants.BOARDS_PATH },
+		'/auth': { redirect: constants.AUTH_LOGIN_PATH },
+		'/login': { redirect: constants.AUTH_LOGIN_PATH },
+		'/signup': { redirect: constants.AUTH_SIGNUP_PATH + '/step/email' },
+		'/auth/signup': { redirect: constants.AUTH_SIGNUP_PATH + '/step/email' },
+		'/auth/signup/step': { redirect: constants.AUTH_SIGNUP_PATH + '/step/email' },
 	}
 })

@@ -6,8 +6,8 @@ import * as constants from '~/constants'
 
 export const useLoginStore = defineStore('login', {
   state: (): LoginForm => ({
-    email: '',
-    password: '',
+    email: 'maratoff20@gmail.com', // will be reset to an empty string
+    password: '123123', // will be reset to an empty string
     isProcessing: false
   }),
   actions: {
@@ -22,7 +22,7 @@ export const useLoginStore = defineStore('login', {
           user$.value = response.user as User
           tokens$.value = response.user[constants.STS_TOKEN_MANAGER] || ''
 
-          navigateTo('/boards')
+          navigateTo('/', { external: true })
         })
         .catch((error) => {
           switch (error.code) {

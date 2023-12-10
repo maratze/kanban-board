@@ -1,12 +1,9 @@
-import { getAuth } from 'firebase/auth'
+import { AUTH_LOGIN_PATH } from '~/constants';
 
-export default defineNuxtRouteMiddleware((to, from) => {
-    getAuth().onAuthStateChanged((user) => {
-        if (user) {
-            // Do something...
-            // If the user has roles we need to check it also
-        } else {
-            navigateTo('/auth/login')
-        }
-    });
+export default defineNuxtRouteMiddleware(async () => {
+    if (await useIsLoggedIn().value) {
+        // Do something
+    } else {
+        return navigateTo(AUTH_LOGIN_PATH)
+    }
 })
