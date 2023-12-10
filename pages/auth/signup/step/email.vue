@@ -7,7 +7,8 @@
         label="Email"
         placeholder="example@mail.com"
         v-model="store.email"
-        :v="v$.email" />
+        :v="v$.email"
+        @submit="nextStep" />
       <LoginButton
         text="Continue"
         :disabled="v$.email.$invalid"
