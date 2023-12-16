@@ -9,7 +9,7 @@
         v-model="store.email"
         :v="v$.email"
         @submit="nextStep" />
-      <LoginButton
+      <CustomButton
         text="Continue"
         :disabled="v$.email.$invalid"
         @click.prevent="nextStep"

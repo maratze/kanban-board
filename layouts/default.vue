@@ -1,10 +1,16 @@
 <template>
   <div class="min-h-[100vh] bg-slate-100">
-    <Header />
-    <div>
-      <Sidebar />
-      <div class="p-4 pt-[74px] pl-[276px]">
-        <slot />
+    <div class="max-w-[1440px] m-auto">
+      <div>
+        <div class="p-4">
+          <Header class="mb-4" />
+          <div class="flex">
+            <Sidebar />
+            <div class="pl-4 w-full">
+              <slot />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

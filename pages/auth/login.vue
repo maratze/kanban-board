@@ -26,7 +26,7 @@
         <NuxtLink to="/auth/restore" class="text-sm text-blue-600 border-blue-600 hover:underline">Forgot password?
         </NuxtLink>
       </div>
-      <LoginButton
+      <CustomButton
         class="mt-6"
         :disabled="v$.email.$invalid || v$.password.$invalid || store.isProcessing"
         :loading="store.isProcessing"
@@ -44,7 +44,7 @@
 <script lang="ts" setup>
 import useVuelidate from '@vuelidate/core';
 import { required, email, minLength, helpers } from '@vuelidate/validators';
-import { AUTH_SIGNUP_PATH, BOARDS_PATH } from '~/constants';
+import { AUTH_SIGNUP_PATH } from '~/constants';
 
 useHead({
   title: 'Sign in'
@@ -56,7 +56,6 @@ definePageMeta({
 })
 
 const store = useLoginStore()
-
 const rules = computed(() => {
   return {
     email: {
@@ -69,15 +68,12 @@ const rules = computed(() => {
     }
   }
 })
-
 const v$ = useVuelidate(rules, store)
-
 const login = (): void => {
   if (v$.value.email.$invalid || v$.value.password.$invalid) {
     return
   }
 
   store.login()
-
 }
 </script>

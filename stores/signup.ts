@@ -1,4 +1,4 @@
-import type { User } from '~/types/user'
+// import type { User } from '~/types/user'
 import type { RegisterForm } from '~/types/auth'
 import { defineStore } from 'pinia'
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
@@ -15,14 +15,14 @@ export const useSignupStore = defineStore('signup', {
     signup(): void {
       this.isProcessing = true
 
-      const user$ = useUser()
-      const tokens$ = useCookie<Tokens>(constants.COOKIE_TOKENS_KEY)
+      // const user$ = useUser()
+      const tokens = useCookie<Tokens>(constants.COOKIE_TOKENS_KEY)
 
       createUserWithEmailAndPassword(getAuth(), this.email, this.password)
         .then(response => {
-          user$.value = response.user as User
-          tokens$.value = response.user[constants.STS_TOKEN_MANAGER] || ''
-          
+          // user$.value = response.user as User
+          tokens.value = response.user[constants.STS_TOKEN_MANAGER] || ''
+
           navigateTo('/', { external: true })
         })
         .catch((error) => {

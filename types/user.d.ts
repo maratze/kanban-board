@@ -4,4 +4,10 @@ export interface User {
     emailVerified: boolean
     phoneNumber: string
     photoURL: string
+    // workspaceIds: string
+    // favouriteBoards: string[]
+}
+
+export interface UserStore {
+    readonly user: User
 }

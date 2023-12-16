@@ -24,7 +24,7 @@
         :v="v$.repeatPassword"
         class="mt-4"
         @submit="register" />
-      <LoginButton
+      <CustomButton
         text="Sign up"
         :loading="store.isProcessing"
         :disabled="v$.password.$invalid || v$.repeatPassword.$invalid || store.isProcessing"

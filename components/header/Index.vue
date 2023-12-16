@@ -1,9 +1,10 @@
 <template>
   <div>
-    <div class="fixed z-20 h-[56px] w-full grid items-center px-4 bg-white border-b border-slate-300">
+    <div
+      class="relative z-20 h-[64px] w-full grid items-center px-4 bg-white border border-slate-300 rounded-lg">
       <div class="flex justify-between">
         <div>
-          <HeaderLogo />
+          <Logo />
         </div>
         <div class="flex gap-4">
           <HeaderAccount @click.prevent="signOut" />

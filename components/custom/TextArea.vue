@@ -2,7 +2,7 @@
   <div>
     <label :for="name" class="grid">
       <span class="text-md text-slate-800">{{ label }}</span>
-      <input
+      <textarea
         :id="id"
         :name="name"
         :type="type"
@@ -12,12 +12,14 @@
         @keypress="submitByEnter"
         @input="inputValue"
         @change="v?.$touch"
-        class="h-[48px] block mt-2 px-4 text-slate-800 border bg-slate-100 rounded-lg outline-none transition-all duration-200 placeholder-slate-400 placeholder:font-light"
+        class="h-[144px] block mt-2 py-3 px-4 text-slate-800 border bg-slate-100 rounded-lg outline-none transition-all duration-200 placeholder-slate-400 placeholder:font-light resize-none"
         :class="{
           'border-slate-300 focus:border-slate-500': !v?.$error,
           'border-red-400 focus:border-red-400': v?.$error,
           'border-green-600 focus:border-green-600': !v?.$invalid
-        }" />
+        }">
+      </textarea>
+      <span class="mt-2 text-sm text-slate-400">{{ text }}</span>
       <template v-if="v?.$error">
         <span
           v-for="error of v?.$errors"
@@ -26,7 +28,6 @@
           <span class="mt-1 text-sm text-red-400">{{ error.$message }}</span>
         </span>
       </template>
-      <span class="mt-2 text-sm text-slate-400">{{ text }}</span>
     </label>
   </div>
 </template>

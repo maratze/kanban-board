@@ -1,5 +1,12 @@
 <template>
   <div class="grid gap-8">
+    <!-- <div>
+      <pre>workspaces: {{ workspaces }}</pre>
+      <pre>doc by id: {{ docItem }}</pre>
+      <pre>{{ filterValue }}</pre>
+      <input type="text" v-model.trim="filterValue">
+      <pre>filtered docs: {{ docs }}</pre>
+    </div> -->
     <div>
       <!-- Title -->
       <h2 class="flex items-center gap-2 text-md font-medium text-slate-600">
@@ -85,7 +92,41 @@
 </template>
 
 <script lang="ts" setup>
+// import { addDoc, collection, doc, getDocs, query, updateDoc, where, type DocumentData } from 'firebase/firestore';
+
 definePageMeta({
   middleware: ['auth']
 })
+
+// const workspaces = ref()
+// const db = useFirestore()
+
+// const { data, error } = useCollection(collection(db, 'workspaces'))
+// workspaces.value = data
+
+// // Add new document
+// // addDoc(collection(db, 'workspaces'), {
+// //   name: 'Project name'
+// // })
+
+// // Update document
+// // updateDoc(doc(db, 'workspaces', 'H4e63m1xUFgazDZZVH6L'), {
+// //   description: 'Test description'
+// // })
+
+// // Get document by id
+// // useDocument<Type>
+// const docItem = useDocument(doc(collection(db, 'workspaces'), 'H4e63m1xUFgazDZZVH6L'))
+
+// // Load filtered value
+// const filterValue: Ref<string | null | undefined> = ref('Ramazanov Inc')
+// let docs: DocumentData[] = reactive([])
+// const q = query(collection(db, "workspaces"), where("name", "==", filterValue.value))
+// const querySnapshot = await getDocs(q);
+
+// querySnapshot.forEach((doc) => {
+//   // doc.data() is never undefined for query doc snapshots
+//   // console.log(doc.id, " => ", doc.data())
+//   docs.push(doc.data())
+// })
 </script>
