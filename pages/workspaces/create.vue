@@ -38,6 +38,10 @@ import { addDoc, collection } from 'firebase/firestore';
 import { WORKSPACES_PATH } from '~/constants';
 import type { Workspace } from '~/types';
 
+definePageMeta({
+  middleware: ['auth']
+})
+
 const isProcessing = ref(false)
 const workspace = ref({} as Workspace)
 const rules = computed(() => {

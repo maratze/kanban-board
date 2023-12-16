@@ -29,6 +29,10 @@ import { collection, query, where, getDocs } from 'firebase/firestore';
 import { WORKSPACES_PATH } from '~/constants';
 import type { Board } from '~/types';
 
+definePageMeta({
+  middleware: ['auth']
+})
+
 const route = useRoute()
 const boards = ref([] as Board[])
 

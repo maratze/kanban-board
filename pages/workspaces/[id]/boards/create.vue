@@ -32,6 +32,10 @@ import { addDoc, collection } from 'firebase/firestore';
 import { WORKSPACES_PATH } from '~/constants';
 import type { Board } from '~/types';
 
+definePageMeta({
+  middleware: ['auth']
+})
+
 const isProcessing = ref(false)
 const board = ref({} as Board)
 const rules = computed(() => {

@@ -28,6 +28,7 @@
       </div>
       <CustomButton
         class="mt-6"
+        text="Sign in"
         :disabled="v$.email.$invalid || v$.password.$invalid || store.isProcessing"
         :loading="store.isProcessing"
         @click.prevent="login" />

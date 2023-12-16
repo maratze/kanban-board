@@ -8,7 +8,8 @@
         v-bind:key="workspace.id">
         <div
           class="workspace flex justify-between items-center gap-2 p-2 text-slate-600 rounded-md transition-all cursor-pointer hover:bg-slate-100"
-          :class="[{ 'menu-visible': workspace.id === route.params.id }]">
+          :class="[{ 'menu-visible': workspace.id === route.params.id || workspace.isMenuVisible }]"
+          @click.prevent="toggleMenuVisible(workspace as Workspace)">
           <div class="flex items-center gap-2">
             <div
               class="flex justify-center items-center min-w-[24px] min-h-[24px] text-xs text-white rounded-md bg-red-400">
@@ -59,26 +60,14 @@
 <script lang="ts" setup>
 import { collection } from 'firebase/firestore';
 import { WORKSPACES_PATH } from '~/constants';
+import type { Workspace } from '~/types';
 
-const isInitialized = ref(false)
 const route = useRoute()
 const workspaces = useCollection(collection(useFirestore(), 'workspaces'))
 
-onUpdated(() => {
-  if (!isInitialized.value) {
-    document.querySelectorAll('.workspace').forEach((el) => {
-      el.addEventListener('click', () => {
-        if (el.classList.contains('menu-visible')) {
-          el.classList.remove('menu-visible')
-        } else {
-          el.classList.add('menu-visible')
-        }
-      })
-    })
-  }
-
-  isInitialized.value = true
-})
+const toggleMenuVisible = (workspace: Workspace) => {
+  workspace['isMenuVisible'] = !workspace['isMenuVisible']
+}
 </script>
 
 <style lang="scss" scoped>

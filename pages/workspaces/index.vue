@@ -11,6 +11,10 @@
 <script lang="ts" setup>
 import { WORKSPACES_PATH } from '~/constants';
 
+definePageMeta({
+  middleware: ['auth']
+})
+
 const goToCreate = () => {
   navigateTo(WORKSPACES_PATH + '/create')
 }
