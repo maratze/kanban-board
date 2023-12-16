@@ -108,4 +108,5 @@ onUpdated(() => {
   .right-line {
     transform: rotate(-45deg);
   }
-}</style>
+}
+</style>

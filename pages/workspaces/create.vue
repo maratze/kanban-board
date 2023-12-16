@@ -1,8 +1,7 @@
 <template>
-  <div class="max-w-xl p-6 border border-slate-300 rounded-lg bg-white">
-    <h1 class="font-medium text-xl">Create a workspace</h1>
-    <p class="mt-2 text-md text-slate-400 leading-5">Improve performance: team members will be able to get convenient
-      access to all boards</p>
+  <FormCreate
+    title="Create a workspace"
+    description="Improve performance: team members will be able to get convenient access to all boards">
     <CustomInput
       type="text"
       id="name"
@@ -22,12 +21,14 @@
       class="mt-4"
       v-model="workspace.description"
       @submit="create" />
-    <CustomButton
-      text="Continue"
-      :disabled="v$.name.$invalid || isProcessing"
-      class="mt-8"
-      @click.prevent="create" />
-  </div>
+    <div class="flex gap-4 mt-8">
+      <CustomButtonCancel />
+      <CustomButton
+        text="Continue"
+        :disabled="v$.name.$invalid || isProcessing"
+        @click.prevent="create" />
+    </div>
+  </FormCreate>
 </template>
 
 <script lang="ts" setup>
