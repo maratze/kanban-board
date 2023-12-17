@@ -9,3 +9,7 @@ export const BOARDS_PATH = '/boards'
 export const WORKSPACES_PATH = '/workspaces'
 export const COOKIE_TOKENS_KEY = 'tokens'
 export const STS_TOKEN_MANAGER = 'stsTokenManager'
+
+// Database collections
+export const WORKSPACES = 'workspaces'
+export const BOARDS = 'boards'

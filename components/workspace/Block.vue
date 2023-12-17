@@ -19,7 +19,9 @@
 </template>
 
 <script lang="ts" setup>
-import { collection, doc } from 'firebase/firestore';
+import type { Workspace } from '~/types';
 
-const workspace = useDocument(doc(collection(useFirestore(), 'workspaces'), useRoute().params.id as string))
+defineProps<{
+  workspace: Workspace
+}>()
 </script>

@@ -58,7 +58,13 @@ const create = async () => {
   isProcessing.value = true
 
   try {
+    workspace.value.userIds = [useUserStore().user.uid]
     const { id } = await addDoc(collection(useFirestore(), 'workspaces'), workspace.value)
+    const { workspaces } = storeToRefs(useWorkspacesStore())
+
+    workspace.value.id = id
+    workspaces.value.push(workspace.value)
+
     navigateTo(WORKSPACES_PATH + '/' + id + '/boards')
   }
   catch (ex) {

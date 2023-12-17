@@ -15,3 +15,8 @@
     </div>
   </div>
 </template>
+
+<script lang="ts" setup>
+const wsStore = useWorkspacesStore()
+wsStore.load()
+</script>
