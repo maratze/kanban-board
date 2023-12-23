@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="workspaces.length"
+    v-if="isWsLoaded && workspaces.length"
     class="grid gap-1">
     <div
       v-for="workspace of workspaces"
@@ -62,7 +62,14 @@ import { useWorkspacesStore } from '~/stores/workspaces';
 import type { Workspace } from '~/types';
 
 const route = useRoute()
-const { workspaces } = storeToRefs(useWorkspacesStore())
+const { loadWorkspaces } = useWorkspacesStore()
+const { workspaces, isWsLoaded } = storeToRefs(useWorkspacesStore())
+
+onMounted(async () => {
+  if (!workspaces.value.length) {
+    await loadWorkspaces()
+  }
+})
 
 const toggleMenuVisible = (workspace: Workspace) => {
   workspace['isMenuVisible'] = !workspace['isMenuVisible']

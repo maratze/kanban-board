@@ -18,24 +18,22 @@
       <CustomButtonCancel />
       <CustomButton
         text="Create"
-        :disabled="v$.name.$invalid || isProcessing"
+        :disabled="v$.name.$invalid || isBdLoading"
         @click.prevent="create" />
     </div>
   </FormCreate>
 </template>
 
 <script lang="ts" setup>
-import useVuelidate from '@vuelidate/core';
-import { required, helpers } from '@vuelidate/validators';
-import { addDoc, collection, doc } from 'firebase/firestore';
-import { WORKSPACES_PATH } from '~/constants';
-import type { Board, Workspace } from '~/types';
+import useVuelidate from '@vuelidate/core'
+import { required, helpers } from '@vuelidate/validators'
+import { collection, doc } from 'firebase/firestore'
+import type { Board, Workspace } from '~/types'
 
 definePageMeta({
   middleware: ['auth']
 })
 
-const isProcessing = ref(false)
 const workspace = useDocument(doc(collection(useFirestore(), 'workspaces'), useRoute().params.id as string))
 
 const board = ref({} as Board)
@@ -48,20 +46,11 @@ const rules = computed(() => {
 })
 
 const v$ = useVuelidate(rules, board)
+const { addBoard } = useBoardsStore()
+const { isBdLoading } = useBoardsStore()
 
 const create = async () => {
-  isProcessing.value = true
-
-  try {
-    board.value.workspaceId = useRoute().params.id as string
-    await addDoc(collection(useFirestore(), 'boards'), board.value)
-    navigateTo(WORKSPACES_PATH + '/' + board.value.workspaceId + '/boards')
-  }
-  catch (ex) {
-    useNuxtApp().$toast.error('Something went wrong with creating a new board')
-  }
-  finally {
-    isProcessing.value = false
-  }
+  board.value.workspaceId = useRoute().params.id as string
+  addBoard(board.value)
 }
 </script>

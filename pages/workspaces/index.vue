@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="isLoaded">
+    v-if="isWsLoaded">
     <div
       v-if="workspaces.length"
       class="grid gap-4">
@@ -44,16 +44,13 @@ const goToCreateBoard = (workspaceId: string) => {
   navigateTo(WORKSPACES_PATH + '/' + workspaceId + '/boards/create')
 }
 
-const { workspaces, isLoaded } = storeToRefs(useWorkspacesStore())
+const { loadWorkspaces } = useWorkspacesStore()
+const { workspaces, isWsLoaded } = storeToRefs(useWorkspacesStore())
+
 const { boards } = storeToRefs(useBoardsStore())
-// const bStore = useBoardsStore()
+const { loadBoards } = useBoardsStore()
 
-// if (workspaces.value.length > 0) {
-//   console.log('URA')
-// }
-
-// workspacesStore.load()
-// onUpdated(() => {
-//   boardsStore.load(workspacesStore.workspaces.map(x => x.id))
-// })
+await loadWorkspaces().then(() => {
+  loadBoards(workspaces.value.map(x => x.id))
+})
 </script>

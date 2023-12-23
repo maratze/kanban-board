@@ -6,16 +6,22 @@ import { WORKSPACES } from '~/constants';
 export const useWorkspacesStore = defineStore('workspacesStore', {
   state: (): WorkspacesStore => ({
     workspaces: [],
-    isLoaded: false
+    isWsLoaded: false,
+    isWsLoading: false
   }),
   actions: {
-    async load() {
+    async loadWorkspaces() {
+      if (this.isWsLoading) {
+        return
+      }
+
+      this.isWsLoading = true
+
       if (this.workspaces.length > 0) {
         return
       }
 
-      this.isLoaded = false
-      this.workspaces = []
+      this.isWsLoaded = false
 
       const q = query(
         collection(useFirestore(), WORKSPACES),
@@ -24,6 +30,8 @@ export const useWorkspacesStore = defineStore('workspacesStore', {
       )
       await getDocs(q)
         .then(data => {
+          this.workspaces = []
+
           data.docs.forEach((doc) => {
             const workspace = doc.data() as Workspace
             workspace.id = doc.id
@@ -31,7 +39,10 @@ export const useWorkspacesStore = defineStore('workspacesStore', {
           })
         })
         .catch(ex => useNuxtApp().$toast.error('Failed to load workspaces. Code: ' + ex.code))
-        .finally(() => this.isLoaded = true)
+        .finally(() => {
+          this.isWsLoaded = true
+          this.isWsLoading = false
+        })
     }
   }
 })

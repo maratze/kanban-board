@@ -14,7 +14,15 @@ export interface Workspace {
 
 export interface WorkspacesStore {
     workspaces: Workspace[]
+    isWsLoaded: boolean
+    isWsLoading: boolean
+}
+
+export interface WorkspaceStore {
+    workspace: Workspace
+    boards: Board[]
     isLoaded: boolean
+    isLoading: boolean
 }
 
 export interface Board {
@@ -25,6 +33,7 @@ export interface Board {
 }
 
 export interface BoardsStore {
-    boards: Board[],
-    isLoaded: boolean
+    boards: Board[]
+    isBdLoaded: boolean
+    isBdLoading: boolean
 }
