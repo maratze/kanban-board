@@ -1,4 +1,4 @@
-import { doc, collection, getDocs, query, where } from 'firebase/firestore'
+import { doc, collection, getDocs, query, where, orderBy } from 'firebase/firestore'
 import { defineStore } from 'pinia'
 import { BOARDS, WORKSPACES } from '~/constants'
 import type { Board, Workspace, WorkspaceStore } from '~/types'
@@ -31,7 +31,10 @@ export const useWorkspaceStore = defineStore('workspaceStore', {
       if (this.workspace) {
         this.boards = []
 
-        const q = query(collection(useFirestore(), BOARDS), where('workspaceId', '==', id))
+        const q = query(
+          collection(useFirestore(), BOARDS), 
+          where('workspaceId', '==', id),
+          orderBy('name'))
         const querySnapshot = await getDocs(q)
 
         querySnapshot.forEach((doc) => {

@@ -10,6 +10,25 @@ export const WORKSPACES_PATH = '/workspaces'
 export const COOKIE_TOKENS_KEY = 'tokens'
 export const STS_TOKEN_MANAGER = 'stsTokenManager'
 
-// Database collections
 export const WORKSPACES = 'workspaces'
 export const BOARDS = 'boards'
+
+export const colors = [
+    '#c084fc',
+    '#818cf8',
+    '#69a7e6',
+    '#38bdf9',
+    '#24d3ee',
+    '#2dd4bf',
+    '#84cc15',
+    '#34d399',
+    '#49de80',
+    '#f87171',
+    '#fb7185',
+    '#fb923c',
+    '#facc14',
+    'pink',
+    '#94a3b8',
+    '#a1a1aa',
+    '#333333'
+]

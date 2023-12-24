@@ -47,8 +47,6 @@ export const useBoardsStore = defineStore('boardsStore', {
         })
     },
     async addBoard(board: Board) {
-      this.isBdLoading = true
-
       try {
         await addDoc(collection(useFirestore(), 'boards'), board)
         this.boards.push(board)
@@ -56,9 +54,6 @@ export const useBoardsStore = defineStore('boardsStore', {
       }
       catch (ex) {
         useNuxtApp().$toast.error('Something went wrong with creating a new board')
-      }
-      finally {
-        this.isBdLoading = false
       }
     }
   }

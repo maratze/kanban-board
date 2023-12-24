@@ -35,7 +35,7 @@
 import useVuelidate from '@vuelidate/core';
 import { required, helpers } from '@vuelidate/validators';
 import { addDoc, collection } from 'firebase/firestore';
-import { WORKSPACES_PATH } from '~/constants';
+import { WORKSPACES_PATH, colors } from '~/constants';
 import type { Workspace } from '~/types';
 
 definePageMeta({
@@ -58,9 +58,20 @@ const create = async () => {
   isProcessing.value = true
 
   try {
-    workspace.value.userIds = [useUserStore().user.uid]
-    const { id } = await addDoc(collection(useFirestore(), 'workspaces'), workspace.value)
     const { workspaces } = storeToRefs(useWorkspacesStore())
+    const usedColors = workspaces.value.map(x => x.color)
+    let color = useRandomColor()
+
+    if (usedColors.length < colors.length) {
+      while (usedColors.includes(color)) {
+        color = useRandomColor()
+      }
+    }
+
+    workspace.value.color = color
+    workspace.value.userIds = [useUserStore().user.uid]
+
+    const { id } = await addDoc(collection(useFirestore(), 'workspaces'), workspace.value)
 
     workspace.value.id = id
     workspaces.value.push(workspace.value)

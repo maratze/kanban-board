@@ -11,7 +11,8 @@
         @click.prevent="toggleMenuVisible(workspace as Workspace)">
         <div class="flex items-center gap-2">
           <div
-            class="flex justify-center items-center min-w-[24px] min-h-[24px] text-xs text-white rounded-md bg-red-400">
+            class="flex justify-center items-center min-w-[24px] min-h-[24px] text-xs text-white rounded-md"
+            :style="`background-color: ${workspace.color};`">
             {{ useFirstLetter(workspace.name) }}</div>
           <span class="text-md font-medium leading-4">{{ workspace.name }}</span>
         </div>

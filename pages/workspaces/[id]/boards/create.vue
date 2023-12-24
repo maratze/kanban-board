@@ -14,11 +14,14 @@
       v-model="board.name"
       :v="v$.name"
       @submit="create" />
+    <Colors
+      class="mt-4"
+      v-model="board.color" />
     <div class="flex gap-4 mt-8">
       <CustomButtonCancel />
       <CustomButton
         text="Create"
-        :disabled="v$.name.$invalid || isBdLoading"
+        :disabled="v$.name.$invalid"
         @click.prevent="create" />
     </div>
   </FormCreate>
@@ -28,6 +31,7 @@
 import useVuelidate from '@vuelidate/core'
 import { required, helpers } from '@vuelidate/validators'
 import { collection, doc } from 'firebase/firestore'
+import { colors } from '~/constants';
 import type { Board, Workspace } from '~/types'
 
 definePageMeta({
@@ -36,7 +40,10 @@ definePageMeta({
 
 const workspace = useDocument(doc(collection(useFirestore(), 'workspaces'), useRoute().params.id as string))
 
-const board = ref({} as Board)
+const board = ref({
+  color: colors[0]
+} as Board)
+
 const rules = computed(() => {
   return {
     name: {
@@ -47,7 +54,6 @@ const rules = computed(() => {
 
 const v$ = useVuelidate(rules, board)
 const { addBoard } = useBoardsStore()
-const { isBdLoading } = useBoardsStore()
 
 const create = async () => {
   board.value.workspaceId = useRoute().params.id as string

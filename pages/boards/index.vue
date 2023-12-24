@@ -17,7 +17,7 @@
       <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 mt-4">
         <!-- Board -->
         <div
-          class="flex flex-wrap min-h-[100px] w-full p-2 bg-zinc-400 rounded-md cursor-pointer transition-all duration-100 hover:ring-4 hover:ring-zinc-400">
+          class="flex flex-wrap min-h-[100px] w-full p-2 bg-gray-400 rounded-md cursor-pointer transition-all duration-100 hover:ring-4 hover:ring-zinc-400">
           <h3 class="block w-full text-white font-medium break-words leading-4">Worker</h3>
           <p class="flex justify-between items-end w-full">
             <span class="text-white text-xs leading-3">Workspace name</span>

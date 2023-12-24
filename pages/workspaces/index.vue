@@ -13,6 +13,7 @@
             v-for="board of boards.filter((x: Board) => x.workspaceId === workspace.id)"
             v-bind:key="board.id"
             :name="board.name"
+            :color="board.color"
             class="text-white" />
           <BoardCardCreate @click.prevent="goToCreateBoard(workspace.id)" />
         </BoardCardWrapper>

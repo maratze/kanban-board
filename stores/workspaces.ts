@@ -16,11 +16,6 @@ export const useWorkspacesStore = defineStore('workspacesStore', {
       }
 
       this.isWsLoading = true
-
-      if (this.workspaces.length > 0) {
-        return
-      }
-
       this.isWsLoaded = false
 
       const q = query(
