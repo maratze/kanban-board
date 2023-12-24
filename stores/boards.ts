@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import type { Board, BoardsStore } from '~/types'
-import { BOARDS, WORKSPACES_PATH } from '~/constants';
-import { collection, query, where, getDocs, orderBy, addDoc } from 'firebase/firestore';
+import { BOARDS, WORKSPACES_PATH } from '~/constants'
+import { collection, query, where, getDocs, orderBy, addDoc } from 'firebase/firestore'
 
 export const useBoardsStore = defineStore('boardsStore', {
   state: (): BoardsStore => ({
@@ -48,7 +48,7 @@ export const useBoardsStore = defineStore('boardsStore', {
     },
     async addBoard(board: Board) {
       try {
-        await addDoc(collection(useFirestore(), 'boards'), board)
+        await addDoc(collection(useFirestore(), BOARDS), board)
         this.boards.push(board)
         navigateTo(WORKSPACES_PATH + '/' + board.workspaceId + '/boards')
       }

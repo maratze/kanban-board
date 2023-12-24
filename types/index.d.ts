@@ -31,6 +31,7 @@ export interface Board {
     name: string
     color: string
     workspaceId: string
+    favoriteUserIds: string[]
 }
 
 export interface BoardsStore {

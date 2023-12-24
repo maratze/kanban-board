@@ -12,8 +12,7 @@
           <BoardCard
             v-for="board of boards"
             v-bind:key="board.id"
-            :name="board.name"
-            :color="board.color"
+            :board="board"
             class="text-white" />
           <BoardCardCreate @click.prevent="goToCreate" />
         </BoardCardWrapper>

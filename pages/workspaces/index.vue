@@ -12,8 +12,7 @@
           <BoardCard
             v-for="board of boards.filter((x: Board) => x.workspaceId === workspace.id)"
             v-bind:key="board.id"
-            :name="board.name"
-            :color="board.color"
+            :board="board"
             class="text-white" />
           <BoardCardCreate @click.prevent="goToCreateBoard(workspace.id)" />
         </BoardCardWrapper>
@@ -30,8 +29,8 @@
 </template>
 
 <script lang="ts" setup>
-import { WORKSPACES_PATH } from '~/constants';
-import type { Board } from '~/types';
+import { WORKSPACES_PATH } from '~/constants'
+import type { Board } from '~/types'
 
 definePageMeta({
   middleware: ['auth']
