@@ -30,7 +30,9 @@ export interface Board {
     id: string
     name: string
     color: string
+    lastVisited: Date | null
     workspaceId: string
+    favoriteUserIds: string[]
 }
 
 export interface BoardsStore {
