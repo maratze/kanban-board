@@ -20,6 +20,9 @@
 import type { PropType } from 'vue';
 import type { Board } from '~/types'
 
+import type { PropType } from 'vue';
+import type { Board } from '~/types'
+
 const props = defineProps({
   workspaceName: { type: String, required: false },
   board: Object as PropType<Board>
